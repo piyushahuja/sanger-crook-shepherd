@@ -12,7 +12,7 @@ declare SHEPHERD_JOB="$1"
 export IRODS_ENVIRONMENT_FILE="/nfs/users/nfs_m/mercury/.irods/irods_environment.humgen.json"
 
 # Our pet PostgreSQL instance
-export PG_HOST="172.27.84.210"
+export PG_HOST="172.27.19.11"
 export PG_DATABASE="postgres"
 export PG_USERNAME="postgres"
 export PG_PASSWORD="postgres"
