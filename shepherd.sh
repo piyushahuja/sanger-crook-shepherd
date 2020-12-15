@@ -29,7 +29,7 @@ export IRODS_ENVIRONMENT_FILE="/nfs/users/nfs_m/mercury/.irods/irods_environment
 
 # Our pet PostgreSQL instance
 export PG_HOST="172.27.19.11"
-export PG_DATABASE="postgres"
+export PG_DATABASE="shepherd"
 export PG_USERNAME="postgres"
 export PG_PASSWORD="postgres"
 
@@ -40,7 +40,7 @@ export LSF_GROUP="hgi-archive"
 # Transfer options
 export PREP_QUEUE="${PREP_QUEUE-normal}"
 export TRANSFER_QUEUE="${TRANSFER_QUEUE-long}"
-export IRODS_BASE="${IRODS_BASE-/humgen/archive}"
+export IRODS_BASE="${IRODS_BASE-/humgen/projects}"
 
 main() {
   local mode="$1"

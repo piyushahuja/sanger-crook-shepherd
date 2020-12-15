@@ -63,4 +63,4 @@ bsub -n "4" -M "1000" \
      -o "${LOG_DIR}/transfer.%I.log" \
      -e "${LOG_DIR}/transfer.%I.log" \
      -J "shepherd_worker[1-10]" \
-     "/lustre/scratch119/realdata/mdt3/teams/hgi/shepherd-testing/shepherd/shepherd" __transfer "${SHEPHERD_JOB}"
+     "/lustre/scratch119/realdata/mdt3/teams/hgi/vanilla-shepherd/shepherd/shepherd" __transfer "${SHEPHERD_JOB}"
