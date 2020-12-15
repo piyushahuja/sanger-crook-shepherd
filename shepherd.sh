@@ -24,6 +24,8 @@ case "${FARM}" in
     ;;
 esac
 
+declare _ROOT="/lustre/scratch119/realdata/mdt3/teams/hgi/crook-shepherd"
+
 # Become mercury#humgen
 export IRODS_ENVIRONMENT_FILE="/nfs/users/nfs_m/mercury/.irods/irods_environment.humgen.json"
 
@@ -45,17 +47,17 @@ export IRODS_BASE="${IRODS_BASE-/humgen/projects}"
 main() {
   local mode="$1"
 
-  source .venv/bin/activate
+  source "${_ROOT}/.venv/bin/activate"
 
   case "${mode}" in
     "submit")
       local subcollection="$2"
-      local run_dir="$(pwd)/run/${subcollection}"
+      local run_dir="${_ROOT}/run/${subcollection}"
       local fofn="${run_dir}/fofn"
       local metadata="${run_dir}/metadata.json"
       export SHEPHERD_LOG="${run_dir}"
 
-      shepherd/shepherd submit "${fofn}" "${subcollection}" "${metadata}"
+      "${_ROOT}/shepherd/shepherd" submit "${fofn}" "${subcollection}" "${metadata}"
       ;;
 
     "resume")
@@ -76,7 +78,7 @@ main() {
       local job_id="$2"
       export SHEPHERD_LOG="$(pwd)"
 
-      shepherd/shepherd status "${job_id}"
+      "${_ROOT}/shepherd/shepherd" status "${job_id}"
       ;;
 
     *)
