@@ -33,7 +33,7 @@ behaviour:
 * `TRANSFER_QUEUE` sets the LSF queue for the transfer phase (defaults
   to `long`);
 * `IRODS_BASE` sets the base collection into which to transfer (defaults
-  to `/humgen/archive`).
+  to `/humgen/projects`).
 
 ## Status
 
@@ -56,3 +56,17 @@ it has not finished, the `--force` flag must also be provided.
 **NOTE** If you resume a job whose workers are still operational, this
 may have unintended consequences. *Only* use this option when the
 transfer workers have been permanently killed.
+
+
+----
+
+For debugging:
+
+- The job id and whether the correct file names were fed into shepherd can be checked by inspecting `run/crook-{date}/fofn-{jobid}`
+- Whether the job is completed can then be inspected by running `shepherd.sh status JOB_ID`
+- Whether the source and destination address are correctly interpreted by Shepherd can be checked in `run/crook-{date}/prep.log`
+
+---
+
+Teams Mapping: shepherd/lib/planning/transformers/teams.json
+Transformer: transformers.vault_transformer
