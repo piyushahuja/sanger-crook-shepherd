@@ -42,7 +42,6 @@ export LSF_GROUP="hgi-archive"
 # Transfer options
 export PREP_QUEUE="${PREP_QUEUE-normal}"
 export TRANSFER_QUEUE="${TRANSFER_QUEUE-long}"
-export IRODS_BASE="${IRODS_BASE-/humgen/projects}"
 
 main() {
   local mode="$1"
